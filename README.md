@@ -1,6 +1,6 @@
 # 📊 Data Engineering Project: Orders & Weather Analytics Pipeline
 
-##🧠 Project Overview
+## 🧠 Project Overview
 
 This project implements an end-to-end data engineering pipeline that integrates e-commerce order data with external weather data to enable time-based analytical insights.
 
