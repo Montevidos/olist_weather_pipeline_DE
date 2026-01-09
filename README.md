@@ -8,7 +8,7 @@ The pipeline follows modern data engineering best practices, including layered d
 
 ⸻
 
-##🏗️ Architecture Overview
+## 🏗️ Architecture Overview
 
 External API → S3 → Snowflake (RAW) → dbt (STG → PREP → MART)
 
@@ -20,7 +20,7 @@ Apache Airflow (Webserver + Scheduler)
         ↓
 PostgreSQL (Airflow metadata DB)
 
-####Technologies Used
+#### Technologies Used
 	•	Python – API ingestion and data processing
 	•	AWS S3 – cloud object storage
 	•	Snowflake – cloud data warehouse
@@ -32,7 +32,7 @@ PostgreSQL (Airflow metadata DB)
 
 ⸻
 
-##📥 Data Sources
+## 📥 Data Sources
 	1.	E-commerce Orders Dataset
 	•	Orders, customers, delivery timestamps
 	•	Granularity: order-level events
@@ -43,34 +43,34 @@ PostgreSQL (Airflow metadata DB)
 
 ⸻
 
-##🧱 Data Modeling Strategy
+## 🧱 Data Modeling Strategy
 
 The project follows a layered modeling approach:
 
-🔹 RAW Layer
+### 🔹 RAW Layer
 	•	Stores data as ingested
 	•	Minimal transformation
 	•	Schema mirrors source systems
 
-🔹 STAGING (STG)
+### 🔹 STAGING (STG)
 	•	Type casting
 	•	Column renaming
 	•	Timestamp normalization
 	•	No business logic
 
-🔹 PREP Layer
+### 🔹 PREP Layer
 	•	Joins between orders, customers, and weather
 	•	Alignment on hour-level grain using date_trunc('hour')
 	•	Clean, analytics-ready intermediate models
 
-🔹 MART Layer
+### 🔹 MART Layer
 	•	Business-focused datasets
 	•	Aggregations (hourly / daily)
 	•	Designed for BI tools and analysts
 
 ⸻
 
-##⏱️ Time Handling & Grain Design
+## ⏱️ Time Handling & Grain Design
 
 A key challenge addressed in the project is time alignment across heterogeneous data sources.
 	•	All joins are performed using hourly timestamps
@@ -80,7 +80,7 @@ A key challenge addressed in the project is time alignment across heterogeneous 
 
 ⸻
 
-##🔁 Orchestration (Airflow)
+## 🔁 Orchestration (Airflow)
 	•	Airflow DAG schedules daily weather ingestion
 	•	Python tasks:
 	•	Fetch weather data from API
@@ -89,7 +89,7 @@ A key challenge addressed in the project is time alignment across heterogeneous 
 
 ⸻
 
-##📈 Example Analytical Use Cases
+## 📈 Example Analytical Use Cases
 	•	Order volume vs weather conditions
 	•	Impact of precipitation on delivery timing
 	•	Hourly order patterns correlated with temperature
@@ -97,7 +97,7 @@ A key challenge addressed in the project is time alignment across heterogeneous 
 
 ⸻
 
-##✅ Key Engineering Practices Demonstrated
+## ✅ Key Engineering Practices Demonstrated
 	•	Separation of ingestion, storage, and transformation
 	•	Schema-on-read via dbt
 	•	Reproducible transformations
