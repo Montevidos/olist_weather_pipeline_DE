@@ -29,3 +29,4 @@ sources:
       - name: raw_geolocation
       - name: raw_categories
       - name: PRODUCT_CATEGORY_NAME_TRANSLATION
+      - name: raw_weather_rio
