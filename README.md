@@ -1,6 +1,6 @@
-📊 Data Engineering Project: Orders & Weather Analytics Pipeline
+# 📊 Data Engineering Project: Orders & Weather Analytics Pipeline
 
-🧠 Project Overview
+##🧠 Project Overview
 
 This project implements an end-to-end data engineering pipeline that integrates e-commerce order data with external weather data to enable time-based analytical insights.
 
@@ -8,7 +8,7 @@ The pipeline follows modern data engineering best practices, including layered d
 
 ⸻
 
-🏗️ Architecture Overview
+##🏗️ Architecture Overview
 
 External API → S3 → Snowflake (RAW) → dbt (STG → PREP → MART)
 
@@ -20,7 +20,7 @@ Apache Airflow (Webserver + Scheduler)
         ↓
 PostgreSQL (Airflow metadata DB)
 
-Technologies Used
+####Technologies Used
 	•	Python – API ingestion and data processing
 	•	AWS S3 – cloud object storage
 	•	Snowflake – cloud data warehouse
@@ -32,7 +32,7 @@ Technologies Used
 
 ⸻
 
-📥 Data Sources
+##📥 Data Sources
 	1.	E-commerce Orders Dataset
 	•	Orders, customers, delivery timestamps
 	•	Granularity: order-level events
@@ -43,7 +43,7 @@ Technologies Used
 
 ⸻
 
-🧱 Data Modeling Strategy
+##🧱 Data Modeling Strategy
 
 The project follows a layered modeling approach:
 
@@ -70,7 +70,7 @@ The project follows a layered modeling approach:
 
 ⸻
 
-⏱️ Time Handling & Grain Design
+##⏱️ Time Handling & Grain Design
 
 A key challenge addressed in the project is time alignment across heterogeneous data sources.
 	•	All joins are performed using hourly timestamps
@@ -80,7 +80,7 @@ A key challenge addressed in the project is time alignment across heterogeneous 
 
 ⸻
 
-🔁 Orchestration (Airflow)
+##🔁 Orchestration (Airflow)
 	•	Airflow DAG schedules daily weather ingestion
 	•	Python tasks:
 	•	Fetch weather data from API
@@ -89,7 +89,7 @@ A key challenge addressed in the project is time alignment across heterogeneous 
 
 ⸻
 
-📈 Example Analytical Use Cases
+##📈 Example Analytical Use Cases
 	•	Order volume vs weather conditions
 	•	Impact of precipitation on delivery timing
 	•	Hourly order patterns correlated with temperature
@@ -97,7 +97,7 @@ A key challenge addressed in the project is time alignment across heterogeneous 
 
 ⸻
 
-✅ Key Engineering Practices Demonstrated
+##✅ Key Engineering Practices Demonstrated
 	•	Separation of ingestion, storage, and transformation
 	•	Schema-on-read via dbt
 	•	Reproducible transformations
@@ -107,12 +107,3 @@ A key challenge addressed in the project is time alignment across heterogeneous 
 
 ⸻
 
-🚀 What This Project Demonstrates
-
-This project demonstrates practical skills expected from a Junior–Middle Data Engineer, including:
-	•	Designing end-to-end pipelines
-	•	Working with cloud storage and warehouses
-	•	Handling real-world timestamp challenges
-	•	Applying dbt modeling best practices
-	•	Orchestrating pipelines with Airflow
-	•	Writing production-quality SQL
