@@ -1,7 +1,7 @@
 version: "3.8"
 
 x-airflow-common: &airflow-common
-  image: apache/airflow:2.8.4
+  build: .
   env_file:
     - .env
   environment:
@@ -10,9 +10,11 @@ x-airflow-common: &airflow-common
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "false"
     PYTHONPATH: /opt/airflow
+    DBT_PROFILES_DIR: /opt/airflow/dbt_olist
   volumes:
     - ./dags:/opt/airflow/dags
     - ./src:/opt/airflow/src
+    - ./dbt_olist:/opt/airflow/dbt_olist
     - ./logs:/opt/airflow/logs
   depends_on:
     - postgres

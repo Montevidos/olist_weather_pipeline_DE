@@ -2,20 +2,13 @@ version: 2
 models:
   - name: mart_states_reviews
     description: "This table contains average review scores by state."
-  - name: mart_product_category_sales
-    description: "This table contains total sales by product category."
-    tests:
-      - unique:
-          column_name: PRODUCT_CATEGORY_NAME
-      - not_null:
-          column_name: PRODUCT_CATEGORY_NAME
-  - name: mart_city_sales
+  - name: mart_customer_city_sales
     description: "This table contains total orders by customer geolocation."    
     tests:
       - unique:
-          column_name: customer_state
+          column_name: customer_id
       - not_null:
-          column_name: customer_state
+          column_name: customer_id
 
   - name: mart_seller_sales
     description: "This table contains total sales by seller."
@@ -31,4 +24,28 @@ models:
           column_name: product_id
       - not_null:
           column_name: product_id
+  - name: mart_daily_sales
+    description: "This table contains total sales by day."
+    tests:
+      - unique:
+          column_name: order_purchase_timestamp
+      - not_null:
+          column_name: order_purchase_timestamp
+  - name: dim_customers
+    description: "This dimension table contains customer details."
+  - name: fct_orders
+    description: "This fact table contains order metrics."
+  - name: dim_products
+    description: "This dimension table contains product metrics."  
+  - name: dim_sellers
+    description: "This dimension table contains seller details."
+  - name: fct_payments
+    description: "This fact table contains payment metrics."
+  - name: fct_reviews
+    description: "This fact table contains review metrics."
+  - name: dim_geolocation
+    description: "This dimension table contains geolocation details."
+  - name: fct_order_items
+    description: "This fact table contains order items metrics."    
+
 

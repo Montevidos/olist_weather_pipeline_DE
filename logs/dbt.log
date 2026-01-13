@@ -31,3 +31,40 @@ Happy modeling!
 [0m16:15:58.293598 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12933c3e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1291e7530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1291767a0>]}
 [0m16:15:58.296081 [debug] [MainThread]: Flushing usage events
 [0m16:15:59.027982 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:47:15.768943 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa3e17370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa1fa5520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa1fa5490>]}
+
+
+============================== 14:47:15.777539 | e1f64c40-b943-440a-8aa6-76c413a4dbba ==============================
+[0m14:47:15.777539 [info ] [MainThread]: Running with dbt=1.6.18
+[0m14:47:15.780013 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/airflow/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:47:15.788144 [info ] [MainThread]: dbt version: 1.6.18
+[0m14:47:15.795895 [info ] [MainThread]: python version: 3.8.19
+[0m14:47:15.800530 [info ] [MainThread]: python path: /usr/local/bin/python
+[0m14:47:15.804586 [info ] [MainThread]: os info: Linux-5.15.49-linuxkit-aarch64-with-glibc2.34
+[0m14:47:15.809761 [info ] [MainThread]: Using profiles dir at /home/airflow/.dbt
+[0m14:47:15.814475 [info ] [MainThread]: Using profiles.yml file at /home/airflow/.dbt/profiles.yml
+[0m14:47:15.818529 [info ] [MainThread]: Using dbt_project.yml file at /opt/airflow/dbt_project.yml
+[0m14:47:15.834854 [info ] [MainThread]: Configuration:
+[0m14:47:15.840291 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m14:47:15.848327 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m14:47:15.857933 [info ] [MainThread]: Required dependencies:
+[0m14:47:15.862821 [debug] [MainThread]: Executing "git --help"
+[0m14:47:15.885411 [info ] [MainThread]:  - git [[31mERROR[0m]
+
+[0m14:47:15.887750 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m14:47:15.889492 [info ] [MainThread]: [31m3 checks failed:[0m
+[0m14:47:15.891275 [info ] [MainThread]: dbt looked for a profiles.yml file in /home/airflow/.dbt/profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m14:47:15.894431 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </opt/airflow/dbt_project.yml> not found
+
+[0m14:47:15.899080 [info ] [MainThread]: Error from git --help: User does not have permissions for this command: "git"
+
+[0m14:47:15.909597 [debug] [MainThread]: Command `dbt debug` failed at 14:47:15.908952 after 0.16 seconds
+[0m14:47:15.912555 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa3e17370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa1fa52e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa1fa5940>]}
+[0m14:47:15.917066 [debug] [MainThread]: Flushing usage events
